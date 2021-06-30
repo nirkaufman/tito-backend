@@ -21,7 +21,7 @@ export class EventsService {
             userId: userId, 
             categoryId: categoryId, 
             status: Status.ACTIVE, 
-            startTime: date.toLocaleTimeString()
+            startTime: date
         });
     }
 
@@ -30,15 +30,14 @@ export class EventsService {
             throw new Error('not active event');
 
         const date = new Date();
-        await this.EventsRepository.update({eventId: eventId},{endTime: date.toLocaleTimeString(), status: Status.INACTIVE})
+        await this.EventsRepository.update({eventId: eventId},{endTime: date, status: Status.INACTIVE})
         const event: EventEntity = await this.EventsRepository.findOne(eventId)
-        
-        const delta = new Date(event.endTime).getMilliseconds() - new Date(event.startTime).getMilliseconds()
-        let x = new Date(event.endTime).toTimeString()
-        console.log(x)
-        // return new Date(delta).getTime();    
+
+        return new Date(event.endTime.getTime() - event.startTime.getTime()).getTime()
         
     }
+
+    
 
     userHaveActiveEvent(userEvents: EventEntity[]): boolean{
         return userEvents.some( (event) => event.status == Status.ACTIVE)            

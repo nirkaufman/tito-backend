@@ -1,13 +1,13 @@
 
 
-# POST http://localhost:3000/events/tapIn/6 HTTP/1.1
+# POST http://localhost:3000/events/tapIn/10 HTTP/1.1
 # content-type: application/json
 
 # {
 #     "categoryId": "sample"
 # }
 
-POST http://localhost:3000/events/tapOut/40 HTTP/1.1
+POST http://localhost:3000/events/tapOut/43 HTTP/1.1
 # content-type: application/json
 
 # {

@@ -16,10 +16,10 @@ export class EventEntity {
     status: Status;
 
     @Column({nullable: true})
-    startTime: string;
+    startTime: Date;
 
     @Column({nullable: true})
-    endTime: string;
+    endTime: Date;
   
   }
 
