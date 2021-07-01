@@ -17,6 +17,11 @@ export class EventsController {
         return this.eventsService.stopEvent(eventId)
     }
 
+    @Get('results/:userId')
+    getResults(@Param('userId') userId: string){
+        return this.eventsService.getResults(userId)
+    }
+
    
 
 }

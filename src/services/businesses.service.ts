@@ -16,4 +16,8 @@ export class BusinessesService {
         return await this.BusinessesRepository.findOne(businessId)
     }
 
+    async addBusiness(businessName: string) {
+        return await this.BusinessesRepository.insert({businessName: businessName})
+    }
+
 }

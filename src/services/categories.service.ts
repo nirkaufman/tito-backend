@@ -16,4 +16,8 @@ export class CategoriesService {
         return await this.CategoriesRepository.findOne(categoryId)
     }
 
+    async addCategory(categoryName: string) {
+        return await this.CategoriesRepository.insert({categoryName: categoryName})
+    }
+
 }

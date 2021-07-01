@@ -1,15 +1,23 @@
 
 
-# POST http://localhost:3000/events/tapIn/10 HTTP/1.1
+# POST http://localhost:3000/events/tapIn/12 HTTP/1.1
+# content-type: application/json
+
+# {
+#     "categoryId": "2"
+# }
+
+# POST http://localhost:3000/events/tapOut/51 HTTP/1.1
 # content-type: application/json
 
 # {
 #     "categoryId": "sample"
 # }
 
-POST http://localhost:3000/events/tapOut/43 HTTP/1.1
-# content-type: application/json
 
-# {
-#     "categoryId": "sample"
-# }
+POST http://localhost:3000/businesses HTTP/1.1
+content-type: application/json
+
+{
+    "businessName": "new busi"
+}
