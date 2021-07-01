@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { TerminusModule } from '@nestjs/terminus';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection, createConnection } from 'typeorm';
 import { AppController } from './app.controller';
@@ -14,9 +15,10 @@ import { BusinessesService } from './services/businesses.service';
 import { CategoriesService } from './services/categories.service';
 import { EventsService } from './services/events.service';
 import { UsersService } from './services/users.service';
+import { HealthController } from './health/health.controller';
 
 @Module({
-  controllers: [AppController, UsersControler, BusinessesController, CategoriesController, EventsController],
+  controllers: [AppController, UsersControler, BusinessesController, CategoriesController, EventsController, HealthController],
   providers: [
     {
       provide: 'DATABASE_CONNECTION',
@@ -58,6 +60,7 @@ import { UsersService } from './services/users.service';
   ],
   imports:[
     TypeOrmModule,
+    TerminusModule
   ]
 })
 export class AppModule {}
